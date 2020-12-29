@@ -72,10 +72,7 @@
       "^.+\\.(t|j)sx?$": "ts-jest"
     }
   },
-  "dependencies": {
-    "numbro": "^2.3.2",
-    "numeral": "^2.0.6"
-  },
+  "dependencies": {},
   "eslintConfig": {
     "extends": [
       "airbnb-typescript/base",
