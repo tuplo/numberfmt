@@ -2,6 +2,11 @@
 
 <p>
   <img src="https://img.shields.io/npm/v/@tuplo/numberfmt">
+  <a href="https://codecov.io/gh/tuplo/numberfmt">
+    <img src="https://codecov.io/gh/tuplo/numberfmt/branch/main/graph/badge.svg?token=7HDBBT7R1O"/>
+  </a>
+  <img src="https://github.com/tuplo/numberfmt/workflows/Release/badge.svg">
+  <img src="https://david-dm.org/tuplo/numberfmt.svg">
 </p>
 
 > Numeric formatting using a text pattern and native `Intl.NumberFormat()`
