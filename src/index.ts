@@ -1,3 +1,4 @@
+import convertToNumber from './helpers/convert-to-number';
 import getCompactDisplay from './options/compact-display';
 import getCurrency from './options/currency';
 import getCurrencyDisplay from './options/currency-display';
@@ -23,7 +24,10 @@ import {
 } from './helpers/regex';
 import getValue from './helpers/value';
 
-function numberfmt(userValue: number, format: string): string {
+function numberfmt(userInput: unknown, format: string): string {
+  const userValue = convertToNumber(userInput);
+  if (userValue === null) return '';
+
   const { locale, numberingSystem } = Intl.DateTimeFormat().resolvedOptions();
   const digitsFormat = getDigitsFormat(format);
 
