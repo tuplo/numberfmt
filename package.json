@@ -1,0 +1,120 @@
+{
+  "name": "@tuplo/numberfmt",
+  "description": "",
+  "version": "0.0.0-development",
+  "repository": "git@github.com:tuplo/numberfmt.git",
+  "author": "Rui Costa",
+  "license": "MIT",
+  "keywords": [
+    "numbers",
+    "formatting"
+  ],
+  "files": [
+    "dist/**/*.js",
+    "dist/index.d.ts"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "devDependencies": {
+    "@types/jest": "26.0.19",
+    "@types/node": "14.14.16",
+    "@types/numeral": "0.0.28",
+    "@typescript-eslint/eslint-plugin": "4.11.1",
+    "@typescript-eslint/parser": "4.11.1",
+    "commitizen": "4.2.2",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "7.16.0",
+    "eslint-config-airbnb-typescript": "12.0.0",
+    "eslint-config-prettier": "7.1.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "24.1.3",
+    "husky": "4.3.6",
+    "jest": "26.6.3",
+    "microbundle": "0.13.0",
+    "prettier": "2.2.1",
+    "pretty-quick": "3.1.0",
+    "rimraf": "3.0.2",
+    "ts-jest": "26.4.4",
+    "typescript": "4.1.3"
+  },
+  "scripts": {
+    "build": "microbundle --target node --sourcemap false --format cjs,modern --tsconfig tsconfig.build.json",
+    "ci:test": "jest --ci",
+    "ci:test:coverage": "jest --ci --coverage",
+    "lint": "eslint src --ext ts",
+    "test": "jest --watch",
+    "ts-check": "tsc --noEmit"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest"
+    }
+  },
+  "dependencies": {
+    "numbro": "^2.3.2",
+    "numeral": "^2.0.6"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-typescript/base",
+      "prettier",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:import/typescript",
+      "plugin:jest/all"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "jest"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 9,
+      "project": "./tsconfig.json"
+    },
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "rules": {
+      "jest/no-hooks": "off",
+      "@typescript-eslint/comma-dangle": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts"
+        ],
+        "rules": {
+          "no-undef": "off"
+        }
+      }
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 80
+  }
+}

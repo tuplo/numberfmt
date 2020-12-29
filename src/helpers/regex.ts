@@ -1,0 +1,29 @@
+export const rgCurrency = /([A-Z]{3})[scn]?/;
+export const rgCurrencyDisplay = /[A-Z]{3}([scn]?)/;
+export const rgCurrencyFormat = /([A-Z]{3}[scn]?)/;
+export const rgDigitsFormat = /([0,.[\]]+)/;
+export const rgFractionDigits = /\.\]?([0-9[\]]*)/;
+export const rgFractionDigitsAreaOptional = /\[\.\]/;
+export const rgHasParentheses = /^\([^)]*\)/;
+export const rgIntegerDigits = /^([0-9]+)/;
+export const rgIntegerDigitsOnFormat = /^([0]+)/;
+export const rgIsCompact = /[aA]\)?$/;
+export const rgIsEngineering = /E\)?$/;
+export const rgIsLongCompactFormat = /A\)?$/;
+export const rgIsScientific = /e\)?$/;
+export const rgIsShortCompactFormat = /a\)?$/;
+export const rgNotationFormat = /[aAeE]\)?$/;
+export const rgOptionalDigits = /\[([0]+)\]/;
+export const rgOrdinalFormat = /o\)?$/;
+export const rgRequiredDigits = /([0]+)/;
+export const rgSpaceBetween = /[0\]]\s[o%bBmk]/;
+export const rgStartsWithPlus = /^\+/;
+export const rgZerosOnTheLeft = /^([0]+)/;
+
+// units systems
+export const rgBitSystem = /b$/;
+export const rgByteSystem = /B$/;
+export const rgDigitalSystem = /[bB]$/;
+export const rgKiloSystem = /k\)?$/;
+export const rgMetricSystem = /m\)?$/;
+export const rgUnitSystem = /[bBmik]\)?$/;
