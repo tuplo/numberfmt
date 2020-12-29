@@ -41,10 +41,10 @@
   },
   "scripts": {
     "build": "microbundle --target node --sourcemap false --format cjs,modern --tsconfig tsconfig.build.json",
-    "ci:test": "jest --ci",
-    "ci:test:coverage": "jest --ci --coverage",
+    "ci:test": "LANG=en-GB jest --ci",
+    "ci:test:coverage": "LANG=en-GB jest --ci --coverage",
     "lint": "eslint src --ext ts",
-    "test": "jest --watch",
+    "test": "LANG=en-GB jest --watch",
     "ts-check": "tsc --noEmit"
   },
   "config": {
