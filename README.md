@@ -32,7 +32,16 @@ const nf = numberfmt('0,0.00');
 nf(123456); // → 123,456.00
 ```
 
-### Reference
+## Install
+
+```bash
+$ npm install @tuplo/numberfmt
+
+# or with yarn
+$ yarn add @tuplo/numberfmt
+```
+
+## Reference
 
 | Character | Meaning                          |                  |
 | --------- | -------------------------------- | ---------------- |
@@ -107,7 +116,7 @@ nf(123456); // → 123,456.00
 | 1234567       | 0A     | 1 million   |                               |
 | 1234567890    | 0A     | 1 billion   |                               |
 | 1234567890123 | 0A     | 1 trillion  |                               |
-| 1234567       | 0.0A   | 1.2M        | combined with numeric formats |
+| 1234567       | 0.0a   | 1.2M        | combined with numeric formats |
 | 1234567       | 0.0A   | 1.2 million |                               |
 
 ### Exponential
@@ -203,15 +212,6 @@ nf(123456); // → 123,456.00
 ## API
 
 ### numberfmt(value: number, format: string) => number
-
-## Install
-
-```bash
-$ npm install @tuplo/numberfmt
-
-# or with yarn
-$ yarn add @tuplo/numberfmt
-```
 
 ## Contribute
 
