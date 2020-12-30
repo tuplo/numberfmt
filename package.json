@@ -72,7 +72,6 @@
       "^.+\\.(t|j)sx?$": "ts-jest"
     }
   },
-  "dependencies": {},
   "eslintConfig": {
     "extends": [
       "airbnb-typescript/base",

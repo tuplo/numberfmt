@@ -24,9 +24,12 @@ import {
 } from './helpers/regex';
 import getValue from './helpers/value';
 
-function numberfmt(userInput: unknown, format: string): string {
+function numberfmt(userInput: unknown, userFormat?: string): string {
   const userValue = convertToNumber(userInput);
   if (userValue === null) return '';
+
+  // default format
+  const format = userFormat || '0,0';
 
   const { locale, numberingSystem } = Intl.DateTimeFormat().resolvedOptions();
   const digitsFormat = getDigitsFormat(format);

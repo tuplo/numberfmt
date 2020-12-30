@@ -1,6 +1,13 @@
 import numberfmt from '.';
 
 describe('numberfmt', () => {
+  it('has default foramt', () => {
+    expect.assertions(1);
+    const result = numberfmt(123456);
+    const expected = '123,456';
+    expect(result).toBe(expected);
+  });
+
   it.each([
     [undefined, ''],
     [null, ''],
