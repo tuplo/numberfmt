@@ -11,6 +11,10 @@
 
 > Numeric formatting using a text pattern and native `Intl.NumberFormat()`
 
+## Why
+
+JS provides powerful number formatting with the standard built-in object `Intl.NumberFormat`, but we find its API a little verbose and hard to grasp its full potential. We took inspiration from older libraries like numbro.js and numeral.js and built a string based pattern for interacting with `Intl.NumberFormat`.
+
 ## Usage
 
 ```typescript
