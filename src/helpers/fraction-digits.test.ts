@@ -10,6 +10,7 @@ describe('fraction digits', () => {
     ['0.00[0]', [2, 1]],
     ['0.0[00]', [1, 2]],
   ])('gets fraction digits on format - %s', (format, expected) => {
+    expect.assertions(1);
     const result = getFractionDigits(format);
     expect(result).toStrictEqual(expected);
   });

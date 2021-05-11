@@ -12,6 +12,7 @@ describe('convert to number', () => {
     ['1234', 1234],
     [1234, 1234],
   ])('converts from user input to number', (userInput, expected) => {
+    expect.assertions(1);
     const result = convertToNumber(userInput);
     expect(result).toBe(expected);
   });

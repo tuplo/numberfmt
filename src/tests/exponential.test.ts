@@ -10,6 +10,7 @@ describe('exponential', () => {
     ['0e', '1E6', 1000000],
     ['0.0e', '1.2E7', 12345678],
   ])('exponential (scientific): %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });
@@ -24,6 +25,7 @@ describe('exponential', () => {
     ['0E', '1E6', 1000000],
     ['0.0E', '12.3E6', 12345678],
   ])('exponential (engineering): %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });

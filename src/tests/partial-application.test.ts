@@ -6,6 +6,7 @@ describe('partial applications', () => {
     [3000, '0,000', '3,000'],
     [5000, '0B', '4.88kB'],
   ])('partially applies format, then values: %s', (value, format, expected) => {
+    expect.assertions(1);
     const fmt = numberfmt.partial(format);
     const result = fmt(value);
     expect(result).toBe(expected);

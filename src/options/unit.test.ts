@@ -10,6 +10,7 @@ describe('get unit', () => {
     ['gigabit', 1024 * 1024 * 1024],
     ['terabit', 1024 * 1024 * 1024 * 1024],
   ])('unit for power of twos (bits): %s - %s', (expected, value) => {
+    expect.assertions(1);
     const result = getUnitFromPowerOfTwo(value, [
       'bit',
       'kilobit',
@@ -30,6 +31,7 @@ describe('get unit', () => {
     ['terabyte', 1024 * 1024 * 1024 * 1024],
     ['petabyte', 1024 * 1024 * 1024 * 1024 * 1024],
   ])('unit for power of twos (bits): %s - %s', (expected, value) => {
+    expect.assertions(1);
     const result = getUnitFromPowerOfTwo(value, [
       'byte',
       'kilobyte',
@@ -47,6 +49,7 @@ describe('get unit', () => {
     ['meter', 1],
     ['kilometer', 1000],
   ])('metric value: %s - %s', (expected, value) => {
+    expect.assertions(1);
     const result = getMetricUnit(value);
     expect(result).toBe(expected);
   });
@@ -57,6 +60,7 @@ describe('get unit', () => {
     ['0B', 'byte', 1],
     ['0B', 'kilobyte', 1024],
   ])('unit: %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = getUnit(value, format);
     expect(result).toBe(expected);
   });

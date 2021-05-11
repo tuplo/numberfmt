@@ -8,6 +8,7 @@ describe('length', () => {
     ['0m', '1km', 1000],
     ['0m', '1.2km', 1200],
   ])('metric (narrow): %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });
@@ -18,6 +19,7 @@ describe('length', () => {
     ['0 m', '1 m', 1],
     ['0 m', '1 km', 1000],
   ])('metric (short): %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });

@@ -20,6 +20,7 @@ describe('from parts', () => {
       { integer: ['2', '000'], group: ',' },
     ],
   ])('converts from parts to object - %s', (_, parts, expected) => {
+    expect.assertions(1);
     const result = fromParts(parts as Intl.NumberFormatPart[]);
     expect(result).toStrictEqual(expected);
   });

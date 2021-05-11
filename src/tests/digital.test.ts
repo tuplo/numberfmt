@@ -20,6 +20,7 @@ describe('digital', () => {
     ['0 b', '1 Tb', 1024 * 1024 * 1024 * 1024],
     ['0b', '120.56kb', 123456],
   ])('bits: %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });
@@ -42,6 +43,7 @@ describe('digital', () => {
     ['0 B', '1 GB', 1024 * 1024 * 1024],
     ['0 B', '1 TB', 1024 * 1024 * 1024 * 1024],
   ])('bytes: %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });

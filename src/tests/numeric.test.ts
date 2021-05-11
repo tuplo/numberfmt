@@ -24,6 +24,7 @@ describe('numeric formatting', () => {
     ['0[.]00[00]', 10000.2345, '10000.2345'],
     ['0,0.00', 123456, '123,456.00'],
   ])('formats fraction digits - %s', (format, value, expected) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });
@@ -39,6 +40,7 @@ describe('numeric formatting', () => {
     ['.00', 1000.23, '1000.23'],
     ['.0', 0, '.0'],
   ])('formats integer digits - %s', (format, value, expected) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });

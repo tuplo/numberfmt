@@ -17,6 +17,7 @@ describe('minimum fraction digits', () => {
     ['0[.]0[0]', 1.23, 2],
     ['0[.]00[0]', 1.234, 3],
   ])('gets minimum fraction digits - %s', (format, value, expected) => {
+    expect.assertions(1);
     const result = getMinimumFractionDigits(value, format);
     expect(result).toBe(expected);
   });

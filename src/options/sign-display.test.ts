@@ -11,6 +11,7 @@ describe('format sign display', () => {
     ['-0,0.0', 'auto'],
     ['(0,0.0)', 'never'],
   ])('sign display: %s = %s', (format, expected) => {
+    expect.assertions(1);
     const result = getSignDisplay(format);
     expect(result).toBe(expected);
   });

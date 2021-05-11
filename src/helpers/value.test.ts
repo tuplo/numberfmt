@@ -9,6 +9,7 @@ describe('calculates value based on format', () => {
     ['0b', 1, 1048576],
     ['0b', 1, 1073741824],
   ])('value: %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = getValue(value, format);
     expect(result).toBe(expected);
   });
@@ -24,6 +25,7 @@ describe('calculates value based on format', () => {
     ['kilometer', 1000, 1],
     ['kilometer', 1200, 1.2],
   ])('get metric value: %s - %s', (_, value, expected) => {
+    expect.assertions(1);
     const result = getMetricValue(value);
     expect(result).toBe(expected);
   });
@@ -36,6 +38,7 @@ describe('calculates value based on format', () => {
     [1048576, 1],
     [1278541824, 1.19073486328125],
   ])('get compact powers of two: %s', (value, expected) => {
+    expect.assertions(1);
     const result = getCompactPowersOfTwo(value);
     expect(result).toBe(expected);
   });

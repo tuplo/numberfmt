@@ -20,6 +20,7 @@ describe('compact notation', () => {
     ['0.000a', '1.235M', 1234567],
     ['0.000a', '1.235M', 1234567],
   ])('short format: %s, %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });
@@ -42,6 +43,7 @@ describe('compact notation', () => {
     ['0.0A', '1.2 million', 1234567],
     ['0.00A', '1.23 million', 1234567],
   ])('long format: %s, %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });

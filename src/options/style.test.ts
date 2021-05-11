@@ -9,6 +9,7 @@ describe('get style', () => {
     ['0.0GBPn', 'currency'],
     ['0.0%', 'percent'],
   ])('style: $s = $s', (format, expected) => {
+    expect.assertions(1);
     const result = getStyle(format);
     expect(result).toBe(expected);
   });

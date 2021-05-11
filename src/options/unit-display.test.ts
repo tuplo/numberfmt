@@ -10,6 +10,7 @@ describe('unit display', () => {
     ['0 k', 'short'],
     ['0k', 'narrow'],
   ])('unit display: % = %s', (format, expected) => {
+    expect.assertions(1);
     const result = getUnitDisplay(format);
     expect(result).toBe(expected);
   });

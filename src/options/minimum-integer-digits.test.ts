@@ -15,6 +15,7 @@ describe('integer digits configuration', () => {
     ['0e', undefined, 1000],
     ['0E', undefined, 1000],
   ])('gets minimum integer digits: %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = getMinimumIntegerDigits(value, format);
     expect(result).toBe(expected);
   });

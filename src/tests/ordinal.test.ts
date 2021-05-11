@@ -15,6 +15,7 @@ describe('ordinals', () => {
     ['0 o', '4 th', 4],
     ['0,0.000 o', '1,234.560 th', 1234.56],
   ])('ordinals: %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });

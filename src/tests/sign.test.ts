@@ -24,6 +24,7 @@ describe('signal display', () => {
     ['(0.00)', 1.23, '1.23'],
     ['(0.00)', -1.23, '(1.23)'],
   ])('sign display: %s', (format, value, expected) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });

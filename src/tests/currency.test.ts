@@ -10,6 +10,7 @@ describe('currency', () => {
     ['0,0CAD', 'CA$1,000', 1000],
     ['0,0GBP', '£123,456', 123456],
   ])('currency (symbol): %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });
@@ -21,6 +22,7 @@ describe('currency', () => {
     ['0,0JPYs', '¥1,000', 1000],
     ['0,0CADs', '$1,000', 1000],
   ])('currency (narrow symbol): %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });
@@ -32,6 +34,7 @@ describe('currency', () => {
     ['0,0JPYc', 'JPY 1,000', 1000],
     ['0,0CADc', 'CAD 1,000', 1000],
   ])('currency (code): %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });
@@ -48,6 +51,7 @@ describe('currency', () => {
     ['0,0JPYn', '1,000 Japanese yen', 1000],
     ['0,0CADn', '1,000 Canadian dollars', 1000],
   ])('currency (name): %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });
@@ -58,6 +62,7 @@ describe('currency', () => {
     ['0,0GBPca', 'GBP 1M', 1234567],
     ['0,0GBPna', '1M British pounds', 1234567],
   ])('currency: %s = %s', (format, expected, value) => {
+    expect.assertions(1);
     const result = numberfmt(value, format);
     expect(result).toBe(expected);
   });

@@ -14,6 +14,7 @@ describe('percentage', () => {
   ])(
     'percentage: %s = %s',
     (format, expected, value, minimumFractionDigits) => {
+      expect.assertions(1);
       const nf = new Intl.NumberFormat('en-GB', {
         style: 'percent',
         minimumFractionDigits,
