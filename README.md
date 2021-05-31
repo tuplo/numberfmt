@@ -2,10 +2,13 @@
 
 <p>
   <img src="https://img.shields.io/npm/v/@tuplo/numberfmt">
-  <a href="https://codecov.io/gh/tuplo/numberfmt">
-    <img src="https://codecov.io/gh/tuplo/numberfmt/branch/main/graph/badge.svg?token=7HDBBT7R1O"/>
+  <a href="https://codeclimate.com/github/tuplo/numberfmt/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/7978f92305e2d8ed67c6/maintainability" />
   </a>
-  <img src="https://github.com/tuplo/numberfmt/workflows/Release/badge.svg">
+  <a href="https://codeclimate.com/github/tuplo/numberfmt/test_coverage">
+    <img src="https://api.codeclimate.com/v1/badges/7978f92305e2d8ed67c6/test_coverage" />
+  </a>
+  <img src="https://github.com/tuplo/numberfmt/workflows/Build/badge.svg">
   <img src="https://david-dm.org/tuplo/numberfmt.svg">
 </p>
 

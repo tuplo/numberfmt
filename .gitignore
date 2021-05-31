@@ -1,7 +1,8 @@
+/.nyc_output
+/coverage
 /node_modules
 /cjs
 /dist
-/.vscode
 /coverage
 /e2e/node_modules
 /e2e/yarn.lock

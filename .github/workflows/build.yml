@@ -1,4 +1,4 @@
-name: Release
+name: Build
 on:
   push:
     branches:
@@ -25,19 +25,24 @@ jobs:
 
   test-coverage:
     needs: test
+    name: test-coverage
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@master
         with:
           node-version: 16
-      - uses: actions/cache@v2
+      - uses: actions/cache@v1
         with:
           path: node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
       - run: yarn install --frozen-lockfile
-      - run: yarn ci:test:coverage
-      - uses: codecov/codecov-action@v1
+      - uses: paambaati/codeclimate-action@v2.7.2
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: yarn ci:test:coverage
+          debug: true
 
   publish-to-npm:
     needs: test

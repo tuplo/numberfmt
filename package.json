@@ -42,6 +42,7 @@
     "eslint-plugin-import": "2.23.4",
     "eslint-plugin-jest": "24.3.6",
     "jest": "27.0.3",
+    "nyc": "^15.1.0",
     "prettier": "2.3.0",
     "rimraf": "3.0.2",
     "ts-jest": "27.0.1",
@@ -50,7 +51,7 @@
   "scripts": {
     "build": "bash scripts/build.sh",
     "ci:test": "LANG=en-GB jest --ci",
-    "ci:test:coverage": "LANG=en-GB jest --ci --coverage",
+    "ci:test:coverage": "bash ./scripts/coverage.sh",
     "lint": "eslint src --ext ts",
     "test": "LANG=en-GB jest --watch",
     "ts-check": "tsc --noEmit"
