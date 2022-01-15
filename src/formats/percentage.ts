@@ -9,14 +9,8 @@ type FormatPercentageParams = {
 
 function formatPercentage(params: FormatPercentageParams): string {
   const { value, numberFormatter, format } = params;
-  const {
-    minusSign,
-    integer,
-    group,
-    decimal,
-    fraction,
-    percentSign,
-  } = fromParts(numberFormatter.formatToParts(value));
+  const { minusSign, integer, group, decimal, fraction, percentSign } =
+    fromParts(numberFormatter.formatToParts(value));
 
   return [
     minusSign,
