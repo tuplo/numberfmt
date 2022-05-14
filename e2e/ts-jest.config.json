@@ -1,8 +1,0 @@
-{
-  "transform": {
-    "^.+\\.[jt]s$": "ts-jest"
-  },
-  "moduleNameMapper": {
-    "numberfmt$": "<rootDir>/node_modules/@tuplo/numberfmt/cjs"
-  }
-}

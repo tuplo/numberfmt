@@ -54,7 +54,6 @@ function numberfmt(userInput: unknown, userFormat?: string): string {
     unitDisplay: getUnitDisplay(format),
   };
 
-  // @ts-expect-error signDisplay is incompatible?
   const nf = new Intl.NumberFormat(locale, options);
   let n = nf.format(value);
 

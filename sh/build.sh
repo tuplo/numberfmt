@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-rimraf dist
-rimraf cjs
-tsc --build tsconfig.build.json
+main() {
+  rm -rf dist
+  rm -rf cjs
+  tsc --build tsconfig.build.json
 
-esbuild src/index.cjs --bundle --platform=node --outfile=dist/index.cjs
-esbuild src/index.ts --bundle  --platform=node --format=esm --outfile=dist/index.mjs
+  esbuild src/cjs/index.cjs --bundle --platform=node --outfile=dist/index.cjs
+  esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.mjs
 
-# node12 compatibility
-mkdir cjs && cp dist/index.cjs cjs/index.js
+  # node12 compatibility
+  mkdir cjs && cp dist/index.cjs cjs/index.js
+}
+
+main
