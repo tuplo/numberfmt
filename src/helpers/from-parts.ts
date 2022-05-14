@@ -1,6 +1,6 @@
 type NumberParts = Record<Intl.NumberFormatPartTypes, string | string[]>;
 
-function fromParts(parts: Intl.NumberFormatPart[]): NumberParts {
+export function fromParts(parts: Intl.NumberFormatPart[]): NumberParts {
   return parts.reduce((acc, part) => {
     const { type, value } = part;
     if (type === 'integer') {
@@ -12,5 +12,3 @@ function fromParts(parts: Intl.NumberFormatPart[]): NumberParts {
     return acc;
   }, {} as NumberParts);
 }
-
-export default fromParts;

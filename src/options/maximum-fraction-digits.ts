@@ -1,8 +1,11 @@
-import getDigitsFormat from '../helpers/digits-format';
-import getFractionDigits from '../helpers/fraction-digits';
+import { getDigitsFormat } from '../helpers/digits-format';
+import { getFractionDigits } from '../helpers/fraction-digits';
 import { rgUnitSystem } from '../helpers/regex';
 
-function getMaximumFractionDigits(value: number, format: string): number {
+export function getMaximumFractionDigits(
+  value: number,
+  format: string
+): number {
   const digitsFormat = getDigitsFormat(format);
   const [required, optional] = getFractionDigits(digitsFormat);
 
@@ -12,5 +15,3 @@ function getMaximumFractionDigits(value: number, format: string): number {
 
   return required + optional;
 }
-
-export default getMaximumFractionDigits;

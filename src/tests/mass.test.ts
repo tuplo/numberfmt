@@ -1,4 +1,4 @@
-import numberfmt from '..';
+import nf from '..';
 
 describe('mass', () => {
   it.each([
@@ -8,8 +8,7 @@ describe('mass', () => {
     ['0 k', '1 kg', 1],
     ['0 k', '1 g', 0.001],
   ])('mass: %s = %s', (format, expected, value) => {
-    expect.assertions(1);
-    const result = numberfmt(value, format);
+    const result = nf(value, format);
     expect(result).toBe(expected);
   });
 });

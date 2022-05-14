@@ -1,5 +1,5 @@
 import { rgSpaceBetween } from '../helpers/regex';
-import fromParts from '../helpers/from-parts';
+import { fromParts } from '../helpers/from-parts';
 
 type FormatPercentageParams = {
   format: string;
@@ -7,7 +7,7 @@ type FormatPercentageParams = {
   value: number;
 };
 
-function formatPercentage(params: FormatPercentageParams): string {
+export function formatPercentage(params: FormatPercentageParams): string {
   const { value, numberFormatter, format } = params;
   const { minusSign, integer, group, decimal, fraction, percentSign } =
     fromParts(numberFormatter.formatToParts(value));
@@ -23,5 +23,3 @@ function formatPercentage(params: FormatPercentageParams): string {
     .filter(Boolean)
     .join('');
 }
-
-export default formatPercentage;

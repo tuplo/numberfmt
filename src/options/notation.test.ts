@@ -1,4 +1,4 @@
-import getNotation from './notation';
+import { getNotation } from './notation';
 
 describe('notation', () => {
   it.each([
@@ -12,7 +12,6 @@ describe('notation', () => {
     ['0.0E', 'engineering'],
     ['(0.0E)', 'engineering'],
   ])('notation: %s = %s', (format, expected) => {
-    expect.assertions(1);
     const result = getNotation(format);
     expect(result).toBe(expected);
   });

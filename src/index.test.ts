@@ -1,9 +1,8 @@
-import numberfmt from '.';
+import nf from '.';
 
 describe('numberfmt', () => {
   it('has default format', () => {
-    expect.assertions(1);
-    const result = numberfmt(123456);
+    const result = nf(123_456);
     const expected = '123,456';
     expect(result).toBe(expected);
   });
@@ -13,14 +12,13 @@ describe('numberfmt', () => {
     [null, ''],
     [{}, ''],
     [[], ''],
-    [[1234], '1,234'],
-    [[1234, 5678], ''],
+    [[1_234], '1,234'],
+    [[1_234, 5_678], ''],
     ['abc', ''],
     ['1234', '1,234'],
-    [1234, '1,234'],
+    [1_234, '1,234'],
   ])('handles non numeric values: %s', (value, expected) => {
-    expect.assertions(1);
-    const result = numberfmt(value, '0,0');
+    const result = nf(value, '0,0');
     expect(result).toBe(expected);
   });
 });

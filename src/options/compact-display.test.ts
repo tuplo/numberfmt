@@ -1,4 +1,4 @@
-import getCompactDisplay from './compact-display';
+import { getCompactDisplay } from './compact-display';
 
 describe('compact display', () => {
   it.each([
@@ -6,7 +6,6 @@ describe('compact display', () => {
     ['0.0a', 'short'],
     ['0.0A', 'long'],
   ])('compact display: %s', (format, expected) => {
-    expect.assertions(1);
     const result = getCompactDisplay(format);
     expect(result).toBe(expected);
   });

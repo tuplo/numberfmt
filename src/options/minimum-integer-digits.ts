@@ -3,10 +3,10 @@ import {
   rgNotationFormat,
   rgZerosOnTheLeft,
 } from '../helpers/regex';
-import getIntegerDigitsOnFormat from '../helpers/integer-digits-on-format';
-import getDigitsFormat from '../helpers/digits-format';
+import { getIntegerDigitsOnFormat } from '../helpers/integer-digits-on-format';
+import { getDigitsFormat } from '../helpers/digits-format';
 
-function getMinimumIntegerDigits(
+export function getMinimumIntegerDigits(
   value: number,
   format: string
 ): number | undefined {
@@ -24,5 +24,3 @@ function getMinimumIntegerDigits(
     undefined
   );
 }
-
-export default getMinimumIntegerDigits;

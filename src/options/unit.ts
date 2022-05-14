@@ -48,7 +48,7 @@ export function getKiloUnit(value: number): Kilo {
   return 'kilogram';
 }
 
-function getUnit(value: number, format: string): Unit | undefined {
+export function getUnit(value: number, format: string): Unit | undefined {
   if (!rgUnitSystem.test(format)) return undefined;
 
   if (rgMetricSystem.test(format)) return getMetricUnit(value);
@@ -75,5 +75,3 @@ function getUnit(value: number, format: string): Unit | undefined {
 
   return undefined;
 }
-
-export default getUnit;

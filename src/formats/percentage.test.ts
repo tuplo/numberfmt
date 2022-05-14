@@ -1,4 +1,4 @@
-import formatPercentage from './percentage';
+import { formatPercentage } from './percentage';
 
 describe('percentage', () => {
   it.each([
@@ -9,12 +9,11 @@ describe('percentage', () => {
     ['0.00 %', '1.20 %', 0.012, 2],
     ['0.00 %', '1.23 %', 0.0123, 2],
     ['0,0.0 %', '2,000 %', 20, undefined],
-    ['0,0.0 %', '2,000,000 %', 20000, undefined],
-    ['0,0.0 %', '2,000,000.00 %', 20000, 2],
+    ['0,0.0 %', '2,000,000 %', 20_000, undefined],
+    ['0,0.0 %', '2,000,000.00 %', 20_000, 2],
   ])(
     'percentage: %s = %s',
     (format, expected, value, minimumFractionDigits) => {
-      expect.assertions(1);
       const nf = new Intl.NumberFormat('en-GB', {
         style: 'percent',
         minimumFractionDigits,

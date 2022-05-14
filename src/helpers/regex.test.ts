@@ -8,8 +8,7 @@ describe('operational regular expressions', () => {
     ['0,0[.]0[0]', '0,0[.]0[0]'],
     ['0.0a', '0.0'],
   ])('extracts digits format: %s', (format, expected) => {
-    expect.assertions(1);
-    const [, result] = format.match(rgDigitsFormat) || [''];
+    const [, result] = format.match(rgDigitsFormat) || ['', ''];
     expect(result).toBe(expected);
   });
 
@@ -18,7 +17,6 @@ describe('operational regular expressions', () => {
     ['0.000a', true],
     ['0.000A', true],
   ])('compact display: %s', (format, expected) => {
-    expect.assertions(1);
     const result = rgIsCompact.test(format);
     expect(result).toBe(expected);
   });
@@ -31,8 +29,7 @@ describe('operational regular expressions', () => {
     ['USDs', 'USDs'],
     ['EURn', 'EURn'],
   ])('extracts currency format: %s', (format, expected) => {
-    expect.assertions(1);
-    const [, result] = format.match(rgCurrencyFormat) || [''];
+    const [, result] = format.match(rgCurrencyFormat) || ['', ''];
     expect(result).toBe(expected);
   });
 });

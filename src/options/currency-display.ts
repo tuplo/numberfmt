@@ -2,7 +2,7 @@ import { rgCurrencyDisplay } from '../helpers/regex';
 
 type CurrencyDisplay = 'symbol' | 'narrowSymbol' | 'code' | 'name';
 
-function getCurrencyDisplay(format: string): CurrencyDisplay {
+export function getCurrencyDisplay(format: string): CurrencyDisplay {
   const [, display] = format.match(rgCurrencyDisplay) || [''];
   switch (display) {
     case 's':
@@ -15,5 +15,3 @@ function getCurrencyDisplay(format: string): CurrencyDisplay {
       return 'symbol';
   }
 }
-
-export default getCurrencyDisplay;

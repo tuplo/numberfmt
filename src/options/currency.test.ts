@@ -1,4 +1,4 @@
-import getCurrency from './currency';
+import { getCurrency } from './currency';
 
 describe('currency', () => {
   it.each([
@@ -15,7 +15,6 @@ describe('currency', () => {
     ['0GBPn', 'GBP'],
     ['0EUR', 'EUR'],
   ])('currency: %s = %s', (format, expected) => {
-    expect.assertions(1);
     const result = getCurrency(format);
     expect(result).toBe(expected);
   });

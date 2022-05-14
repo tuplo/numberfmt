@@ -83,9 +83,12 @@
       "jest": true
     },
     "rules": {
-      "jest/no-hooks": "off",
       "@typescript-eslint/comma-dangle": "off",
-      "jest/no-identical-title": "off"
+      "import/prefer-default-export": "off",
+      "jest/no-conditional-in-test": "off",
+      "jest/no-hooks": "off",
+      "jest/no-identical-title": "off",
+      "jest/prefer-expect-assertions": "off"
     },
     "overrides": [
       {

@@ -20,7 +20,7 @@ type FormatOrdinalParams = {
   format: string;
 };
 
-function formatOrdinal(params: FormatOrdinalParams): string {
+export function formatOrdinal(params: FormatOrdinalParams): string {
   const { value, formatted, locale, format } = params;
   const pluralRules = new Intl.PluralRules(locale, {
     type: 'ordinal',
@@ -33,5 +33,3 @@ function formatOrdinal(params: FormatOrdinalParams): string {
     ? `${formatted} ${suffix}`
     : `${formatted}${suffix}`;
 }
-
-export default formatOrdinal;

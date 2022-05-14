@@ -1,5 +1,5 @@
-import getDigitsFormat from '../helpers/digits-format';
-import getFractionDigits from '../helpers/fraction-digits';
+import { getDigitsFormat } from '../helpers/digits-format';
+import { getFractionDigits } from '../helpers/fraction-digits';
 import {
   rgFractionDigitsAreaOptional,
   rgOptionalDigits,
@@ -13,7 +13,10 @@ function handleOptionalDigits(value: number, digits: [number, number]): number {
   return Math.min(fractionDigits.length, required + optional);
 }
 
-function getMinimumFractionDigits(value: number, format: string): number {
+export function getMinimumFractionDigits(
+  value: number,
+  format: string
+): number {
   const digitsFormat = getDigitsFormat(format);
   const [required, optional] = getFractionDigits(digitsFormat);
   if (rgFractionDigitsAreaOptional.test(digitsFormat)) {
@@ -28,5 +31,3 @@ function getMinimumFractionDigits(value: number, format: string): number {
   }
   return required + optional;
 }
-
-export default getMinimumFractionDigits;

@@ -1,4 +1,4 @@
-import getCurrencyDisplay from './currency-display';
+import { getCurrencyDisplay } from './currency-display';
 
 describe('currency display', () => {
   it.each([
@@ -7,7 +7,6 @@ describe('currency display', () => {
     ['0GBPc', 'code'],
     ['0GBPn', 'name'],
   ])('compact display - %s', (format, expected) => {
-    expect.assertions(1);
     const result = getCurrencyDisplay(format);
     expect(result).toBe(expected);
   });

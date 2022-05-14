@@ -26,12 +26,10 @@ export function getKiloValue(value: number): number {
   return value;
 }
 
-function getValue(value: number, format: string): number {
+export function getValue(value: number, format: string): number {
   if (rgDigitalSystem.test(format)) return getCompactPowersOfTwo(value);
   if (rgMetricSystem.test(format)) return getMetricValue(value);
   if (rgKiloSystem.test(format)) return getKiloValue(value);
 
   return value;
 }
-
-export default getValue;

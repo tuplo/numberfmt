@@ -1,4 +1,4 @@
-import getMaximumFractionDigits from './maximum-fraction-digits';
+import { getMaximumFractionDigits } from './maximum-fraction-digits';
 
 describe('maximum fraction digits', () => {
   it.each([
@@ -11,17 +11,15 @@ describe('maximum fraction digits', () => {
     ['0[.]00[0]', 1.23, 3],
     ['0[.]00[0]', 1.234, 3],
   ])('gets maximum fraction digits - %s', (format, value, expected) => {
-    expect.assertions(1);
     const result = getMaximumFractionDigits(value, format);
     expect(result).toBe(expected);
   });
 
   it.each([
-    ['0b', 1200, 2],
-    ['0B', 1200, 2],
-    ['0m', 1200, 2],
+    ['0b', 1_200, 2],
+    ['0B', 1_200, 2],
+    ['0m', 1_200, 2],
   ])('fraction digits on unit systems: %s', (format, value, expected) => {
-    expect.assertions(1);
     const result = getMaximumFractionDigits(value, format);
     expect(result).toBe(expected);
   });

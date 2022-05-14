@@ -1,4 +1,4 @@
-import numberfmt from '..';
+import nf from '..';
 
 describe('percentage', () => {
   it.each([
@@ -9,8 +9,7 @@ describe('percentage', () => {
     ['0 %', '100 %', 1],
     ['(0.000 %)', '43.000 %', 0.43],
   ])('percentage: %s = %s', (format, expected, value) => {
-    expect.assertions(1);
-    const result = numberfmt(value, format);
+    const result = nf(value, format);
     expect(result).toBe(expected);
   });
 });

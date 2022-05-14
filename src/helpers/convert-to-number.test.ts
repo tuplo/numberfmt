@@ -1,4 +1,4 @@
-import convertToNumber from './convert-to-number';
+import { convertToNumber } from './convert-to-number';
 
 describe('convert to number', () => {
   it.each([
@@ -6,13 +6,12 @@ describe('convert to number', () => {
     [null, null],
     [{}, null],
     [[], null],
-    [[1234], 1234],
-    [[1234, 5678], null],
+    [[1_234], 1_234],
+    [[1_234, 5_678], null],
     ['abc', null],
-    ['1234', 1234],
-    [1234, 1234],
+    ['1234', 1_234],
+    [1_234, 1_234],
   ])('converts from user input to number', (userInput, expected) => {
-    expect.assertions(1);
     const result = convertToNumber(userInput);
     expect(result).toBe(expected);
   });
