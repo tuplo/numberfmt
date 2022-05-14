@@ -9,7 +9,6 @@
     <img src="https://api.codeclimate.com/v1/badges/7978f92305e2d8ed67c6/test_coverage" />
   </a>
   <img src="https://github.com/tuplo/numberfmt/workflows/Build/badge.svg">
-  <img src="https://david-dm.org/tuplo/numberfmt.svg">
 </p>
 
 > Numeric formatting using a text pattern and native `Intl.NumberFormat()`
@@ -21,18 +20,20 @@ JS provides powerful number formatting with the standard built-in object `Intl.N
 ## Usage
 
 ```typescript
+import nf from '@tuplo/numberfmt';
+
 // numeric
-numberfmt(123456, '0,0.00'); // → 123,456.00
+nf(123456, '0,0.00'); // → 123,456.00
 
 // currency
-numberfmt(123456, '0,0GBP'); // → £123,456
+nf(123456, '0,0GBP'); // → £123,456
 
 // digital units
-numberfmt(123456, '0b'); // → 120.56kb
+nf(123456, '0b'); // → 120.56kb
 
 // functional programming, partial application
-const nf = numberfmt('0,0.00');
-nf(123456); // → 123,456.00
+const nfp = nf.partial('0,0.00');
+nfp(123456); // → 123,456.00
 ```
 
 ## Install
