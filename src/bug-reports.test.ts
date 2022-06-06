@@ -5,8 +5,16 @@ describe('bug reports', () => {
     const value = 47_939;
     const actual = nf(value, '0.0a');
 
-    // 48K on chrome, firefox
+    // const expected = '48K'; //  chrome, firefox
     const expected = '47.9K'; // nodejs
+    expect(actual).toBe(expected);
+  });
+
+  it('respect number of fraction digits', () => {
+    const value = 123.4;
+    const actual = nf(value, '0.00[0]');
+
+    const expected = '123.40';
     expect(actual).toBe(expected);
   });
 });

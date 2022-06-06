@@ -23,7 +23,7 @@ describe('numeric formatting', () => {
     ['0[.]00[00]', 10_000.234, '10000.234'],
     ['0[.]00[00]', 10_000.2345, '10000.2345'],
     ['0,0.00', 123_456, '123,456.00'],
-  ])('formats fraction digits - %s', (format, value, expected) => {
+  ])('formats fraction digits: %s', (format, value, expected) => {
     const result = nf(value, format);
     expect(result).toBe(expected);
   });
@@ -38,7 +38,7 @@ describe('numeric formatting', () => {
     ['.00', 1.23, '1.23'],
     ['.00', 1_000.23, '1000.23'],
     ['.0', 0, '.0'],
-  ])('formats integer digits - %s', (format, value, expected) => {
+  ])('formats integer digits: %s', (format, value, expected) => {
     const result = nf(value, format);
     expect(result).toBe(expected);
   });
