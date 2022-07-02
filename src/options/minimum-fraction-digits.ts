@@ -1,28 +1,28 @@
 import { getDigitsFormat } from '../helpers/digits-format';
 import { getFractionDigits } from '../helpers/fraction-digits';
 import {
-  rgFractionDigitsAreaOptional,
-  rgOptionalDigits,
+	rgFractionDigitsAreaOptional,
+	rgOptionalDigits,
 } from '../helpers/regex';
 
 function handleOptionalDigits(value: number, digits: [number, number]) {
-  const [required] = digits;
+	const [required] = digits;
 
-  return required;
+	return required;
 }
 
 export function getMinimumFractionDigits(value: number, format: string) {
-  const digitsFormat = getDigitsFormat(format);
-  const [required, optional] = getFractionDigits(digitsFormat);
+	const digitsFormat = getDigitsFormat(format);
+	const [required, optional] = getFractionDigits(digitsFormat);
 
-  if (rgFractionDigitsAreaOptional.test(digitsFormat)) {
-    const strNumber = value.toString();
-    if (rgOptionalDigits.test(digitsFormat)) {
-      return handleOptionalDigits(value, [required, optional]);
-    }
+	if (rgFractionDigitsAreaOptional.test(digitsFormat)) {
+		const strNumber = value.toString();
+		if (rgOptionalDigits.test(digitsFormat)) {
+			return handleOptionalDigits(value, [required, optional]);
+		}
 
-    return strNumber.indexOf('.') > -1 ? required : 0;
-  }
+		return strNumber.indexOf('.') > -1 ? required : 0;
+	}
 
-  return rgOptionalDigits.test(digitsFormat) ? required : required + optional;
+	return rgOptionalDigits.test(digitsFormat) ? required : required + optional;
 }

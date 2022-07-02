@@ -3,15 +3,15 @@ import { getFractionDigits } from '../helpers/fraction-digits';
 import { rgUnitSystem } from '../helpers/regex';
 
 export function getMaximumFractionDigits(
-  value: number,
-  format: string
+	value: number,
+	format: string
 ): number {
-  const digitsFormat = getDigitsFormat(format);
-  const [required, optional] = getFractionDigits(digitsFormat);
+	const digitsFormat = getDigitsFormat(format);
+	const [required, optional] = getFractionDigits(digitsFormat);
 
-  if (rgUnitSystem.test(format)) {
-    return Math.max(required + optional, 2);
-  }
+	if (rgUnitSystem.test(format)) {
+		return Math.max(required + optional, 2);
+	}
 
-  return required + optional;
+	return required + optional;
 }
