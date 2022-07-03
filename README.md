@@ -1,5 +1,12 @@
-# numberfmt
+<br />
+<div align="center">
+  <img src="logo.png" alt="Logo" width="120" height="120">
 
+  <h1 align="center">numberfmt</h3>
+
+  <p align="center">
+    Number formatting using a text pattern and native <i>Intl.NumberFormat()</i>
+  </p>
 <p>
   <img src="https://img.shields.io/npm/v/@tuplo/numberfmt">
   <a href="https://codeclimate.com/github/tuplo/numberfmt/maintainability">
@@ -11,7 +18,7 @@
   <img src="https://github.com/tuplo/numberfmt/workflows/Build/badge.svg">
 </p>
 
-> Numeric formatting using a text pattern and native `Intl.NumberFormat()`
+</div>
 
 ## Why
 
