@@ -3,14 +3,21 @@ set -euo pipefail
 
 main() {
   rm -rf dist
-  rm -rf cjs
   tsc --build tsconfig.build.json
 
-  esbuild src/cjs/index.cjs --bundle --platform=node --outfile=dist/index.cjs
-  esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.mjs
+  esbuild src/index.ts \
+    --bundle \
+    --minify \
+    --outfile=dist/index.cjs.js
 
-  # node12 compatibility
-  mkdir cjs && cp dist/index.cjs cjs/index.js
+  esbuild src/index.ts \
+    --bundle \
+    --format=esm \
+    --minify \
+    --outfile=dist/index.esm.js
+
+  rm dist/index.js
+  rm -rf dist/formats dist/helpers dist/options
 }
 
 main
