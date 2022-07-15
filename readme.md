@@ -9,9 +9,7 @@
   </p>
 <p>
   <img src="https://img.shields.io/npm/v/@tuplo/numberfmt">
-  <a href="https://codeclimate.com/github/tuplo/numberfmt/maintainability">
-    <img src="https://api.codeclimate.com/v1/badges/7978f92305e2d8ed67c6/maintainability" />
-  </a>
+  <img src="https://img.shields.io/bundlephobia/minzip/@tuplo/numberfmt">
   <a href="https://codeclimate.com/github/tuplo/numberfmt/test_coverage">
     <img src="https://api.codeclimate.com/v1/badges/7978f92305e2d8ed67c6/test_coverage" />
   </a>
@@ -219,14 +217,6 @@ $ yarn add @tuplo/numberfmt
 | 1000  | 0,0EURn   | 1,000 euros          |                   |
 | 1000  | 0,0USDn   | 1,000 US dollars     |                   |
 | 1000  | 0,0JPYn   | 1,000 Japanese yen   |                   |
-
-## API
-
-### numberfmt(value: number, format: string) => number
-
-## Contribute
-
-Contributions are always welcome!
 
 ## License
 
