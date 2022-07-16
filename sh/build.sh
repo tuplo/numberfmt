@@ -7,13 +7,14 @@ main() {
 
   esbuild src/index.ts \
     --bundle \
+    --format=cjs \
     --minify \
-    --outfile=dist/index.cjs.js \
-    --platform=node
+    --outfile=dist/index.cjs.js
 
   esbuild src/index.ts \
     --bundle \
     --format=esm \
+    --minify \
     --outfile=dist/index.esm.js
 
   rm dist/index.js
