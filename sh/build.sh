@@ -8,12 +8,12 @@ main() {
   esbuild src/index.ts \
     --bundle \
     --minify \
-    --outfile=dist/index.cjs.js
+    --outfile=dist/index.cjs.js \
+    --platform=node
 
   esbuild src/index.ts \
     --bundle \
     --format=esm \
-    --minify \
     --outfile=dist/index.esm.js
 
   rm dist/index.js
