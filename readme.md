@@ -28,17 +28,17 @@ JS provides powerful number formatting with the standard built-in object `Intl.N
 import nf from '@tuplo/numberfmt';
 
 // numeric
-nf(123456, '0,0.00'); // → 123,456.00
+nf(123_456, '0,0.00'); // → 123,456.00
 
 // currency
-nf(123456, '0,0GBP'); // → £123,456
+nf(123_456, '0,0GBP'); // → £123,456
 
 // digital units
-nf(123456, '0b'); // → 120.56kb
+nf(123_456, '0b'); // → 120.56kb
 
 // functional programming, partial application
 const nfp = nf.partial('0,0.00');
-nfp(123456); // → 123,456.00
+nfp(123_456); // → 123,456.00
 ```
 
 ## Install
@@ -49,6 +49,27 @@ $ npm install @tuplo/numberfmt
 # or with yarn
 $ yarn add @tuplo/numberfmt
 ```
+
+## Options
+
+An optional set of options can be provided
+
+```typescript
+nf(123_456, '0,0.00', { locale: 'id-ID' }); // → 123.456,79
+```
+
+### locale
+
+> `string` | optional
+
+The BCP 47 language tag for the locale actually used.
+
+
+### numberingSystem
+
+> `string` | optional
+
+Examples: `arab`, `fullwide`, `hant` or `latn`.
 
 ## Reference
 

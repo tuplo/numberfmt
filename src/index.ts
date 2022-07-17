@@ -23,15 +23,23 @@ import {
 	rgHasParentheses,
 } from './helpers/regex';
 import { getValue } from './helpers/value';
+import {
+	getResolvedOptions,
+	type NumberTimeResolvedOptions,
+} from './helpers/resolved-options';
 
-function numberfmt(userInput: unknown, userFormat?: string): string {
+function numberfmt(
+	userInput: unknown,
+	userFormat?: string,
+	userOptions?: Partial<NumberTimeResolvedOptions>
+): string {
 	const userValue = convertToNumber(userInput);
 	if (userValue === null) return '';
 
 	// default format
 	const format = userFormat || '0,0';
 
-	const { locale, numberingSystem } = Intl.DateTimeFormat().resolvedOptions();
+	const { locale, numberingSystem } = getResolvedOptions(userOptions);
 	const digitsFormat = getDigitsFormat(format);
 
 	// convert user value to computed values (bits, bytes, metric)
