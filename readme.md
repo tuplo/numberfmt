@@ -20,7 +20,7 @@
 
 ## Why
 
-JS provides powerful number formatting with the standard built-in object `Intl.NumberFormat`, but we find its API a little verbose and hard to grasp its full potential. We took inspiration from older libraries like numbro.js and numeral.js and built a string based pattern for interacting with `Intl.NumberFormat`.
+JS provides powerful number formatting with the standard built-in object `Intl.NumberFormat`, but we find its API a little verbose and hard to grasp its full potential. We took inspiration from older libraries like numbro.js and numeral.js and built a string based pattern for interacting with `Intl.NumberFormat`. Tiny footprint, no dependencies, works on the browser or nodejs.
 
 ## Usage
 
@@ -35,6 +35,9 @@ nf(123_456, '0,0GBP'); // → £123,456
 
 // digital units
 nf(123_456, '0b'); // → 120.56kb
+
+// with locale
+nf(123_456, '0,0.00', { locale: 'ar-EG' }); // → ١٢٣٬٤٥٦٫٧٩
 
 // functional programming, partial application
 const nfp = nf.partial('0,0.00');
@@ -55,21 +58,24 @@ $ yarn add @tuplo/numberfmt
 An optional set of options can be provided
 
 ```typescript
-nf(123_456, '0,0.00', { locale: 'id-ID' }); // → 123.456,79
+nf(123_456, '0,0.00', { 
+  locale: 'ar-EG',
+  numberingSystem: 'arab'
+}); // → ١٢٣٬٤٥٦٫٧٩
 ```
 
 ### locale
 
-> `string` | optional
+> `string` | optional | defaults to system locale
 
 The BCP 47 language tag for the locale actually used.
 
 
 ### numberingSystem
 
-> `string` | optional
+> `string` | optional | derives from locale
 
-Examples: `arab`, `fullwide`, `hant` or `latn`.
+Examples: `arab`, `fullwide`, `hant`, `latn`.
 
 ## Reference
 
