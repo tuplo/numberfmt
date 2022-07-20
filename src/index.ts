@@ -23,10 +23,8 @@ import {
 	rgHasParentheses,
 } from './helpers/regex';
 import { getValue } from './helpers/value';
-import {
-	getResolvedOptions,
-	type NumberTimeResolvedOptions,
-} from './helpers/resolved-options';
+import { getResolvedOptions } from './helpers/resolved-options';
+import type { NumberTimeResolvedOptions } from './numberfmt.d';
 
 function numberfmt(
 	userInput: unknown,

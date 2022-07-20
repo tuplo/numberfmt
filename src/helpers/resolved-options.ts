@@ -1,7 +1,4 @@
-export interface NumberTimeResolvedOptions {
-	locale: string;
-	numberingSystem: string;
-}
+import type { NumberTimeResolvedOptions } from 'src/numberfmt.d';
 
 export function getResolvedOptions(
 	userOptions?: Partial<NumberTimeResolvedOptions>

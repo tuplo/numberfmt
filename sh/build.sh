@@ -19,6 +19,7 @@ main() {
 
   rm dist/index.js
   rm -rf dist/formats dist/helpers dist/options
+  cp src/numberfmt.d.ts dist/
 }
 
 main
