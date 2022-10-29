@@ -1,13 +1,13 @@
 import { rgSpaceBetween } from '../helpers/regex';
 import { fromParts } from '../helpers/from-parts';
 
-type FormatPercentageParams = {
+interface IFormatPercentageParams {
 	format: string;
 	numberFormatter: Intl.NumberFormat;
 	value: number;
-};
+}
 
-export function formatPercentage(params: FormatPercentageParams): string {
+export function formatPercentage(params: IFormatPercentageParams) {
 	const { value, numberFormatter, format } = params;
 	const { minusSign, integer, group, decimal, fraction, percentSign } =
 		fromParts(numberFormatter.formatToParts(value));

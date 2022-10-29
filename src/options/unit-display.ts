@@ -1,8 +1,8 @@
 import { rgUnitSystem, rgSpaceBetween } from '../helpers/regex';
 
-type UnitDisplay = 'short' | 'narrow' | 'long';
+type IUnitDisplay = 'short' | 'narrow' | 'long';
 
-export function getUnitDisplay(format: string): UnitDisplay {
+export function getUnitDisplay(format: string): IUnitDisplay {
 	if (rgUnitSystem.test(format) && !rgSpaceBetween.test(format)) {
 		return 'narrow';
 	}

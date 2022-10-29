@@ -1,4 +1,4 @@
-export interface NumberTimeResolvedOptions {
+export interface INumberTimeResolvedOptions {
 	locale: string;
 	numberingSystem: string;
 }

@@ -6,9 +6,9 @@ import {
 	rgKiloSystem,
 } from '../helpers/regex';
 
-type Bit = 'bit' | 'kilobit' | 'megabit' | 'gigabit' | 'terabit';
+type IBit = 'bit' | 'kilobit' | 'megabit' | 'gigabit' | 'terabit';
 
-type Byte =
+type IByte =
 	| 'byte'
 	| 'kilobyte'
 	| 'megabyte'
@@ -16,21 +16,21 @@ type Byte =
 	| 'terabyte'
 	| 'petabyte';
 
-type Metric = 'millimeter' | 'centimeter' | 'meter' | 'kilometer';
+type IMetric = 'millimeter' | 'centimeter' | 'meter' | 'kilometer';
 
-type Kilo = 'gram' | 'kilogram';
+type IKilo = 'gram' | 'kilogram';
 
-type Unit = Bit | Byte | Metric | Kilo;
+type IUnit = IBit | IByte | IMetric | IKilo;
 
 export function getUnitFromPowerOfTwo(
 	value: number,
-	units: (Bit | Byte)[]
-): Bit | Byte {
+	units: (IBit | IByte)[]
+): IBit | IByte {
 	const idx = Math.floor(Math.log(value) / Math.log(1024));
 	return units[idx];
 }
 
-export function getMetricUnit(value: number): Metric {
+export function getMetricUnit(value: number): IMetric {
 	const absValue = Math.abs(value);
 
 	if (absValue > 999.9999) return 'kilometer';
@@ -40,7 +40,7 @@ export function getMetricUnit(value: number): Metric {
 	return 'meter';
 }
 
-export function getKiloUnit(value: number): Kilo {
+export function getKiloUnit(value: number): IKilo {
 	const absValue = Math.abs(value);
 
 	if (absValue >= 0.001 && absValue <= 0.00999) return 'gram';
@@ -48,7 +48,7 @@ export function getKiloUnit(value: number): Kilo {
 	return 'kilogram';
 }
 
-export function getUnit(value: number, format: string): Unit | undefined {
+export function getUnit(value: number, format: string): IUnit | undefined {
 	if (!rgUnitSystem.test(format)) return undefined;
 
 	if (rgMetricSystem.test(format)) return getMetricUnit(value);

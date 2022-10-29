@@ -24,13 +24,13 @@ import {
 } from './helpers/regex';
 import { getValue } from './helpers/value';
 import { getResolvedOptions } from './helpers/resolved-options';
-import type { NumberTimeResolvedOptions } from './numberfmt.d';
+import type { INumberTimeResolvedOptions } from './numberfmt.d';
 
 function numberfmt(
 	userInput: unknown,
 	userFormat?: string,
-	userOptions?: Partial<NumberTimeResolvedOptions>
-): string {
+	userOptions?: Partial<INumberTimeResolvedOptions>
+) {
 	const userValue = convertToNumber(userInput);
 	if (userValue === null) return '';
 

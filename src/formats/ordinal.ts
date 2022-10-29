@@ -1,6 +1,6 @@
 import { rgSpaceBetween } from '../helpers/regex';
 
-function getSuffixes(locale: string): Map<string, string> {
+function getSuffixes(locale: string) {
 	switch (locale) {
 		case 'en-GB':
 		default:
@@ -13,14 +13,14 @@ function getSuffixes(locale: string): Map<string, string> {
 	}
 }
 
-type FormatOrdinalParams = {
+interface IFormatOrdinalParams {
 	value: number;
 	formatted: string;
 	locale: string;
 	format: string;
-};
+}
 
-export function formatOrdinal(params: FormatOrdinalParams): string {
+export function formatOrdinal(params: IFormatOrdinalParams) {
 	const { value, formatted, locale, format } = params;
 	const pluralRules = new Intl.PluralRules(locale, {
 		type: 'ordinal',

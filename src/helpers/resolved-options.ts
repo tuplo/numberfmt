@@ -1,7 +1,7 @@
-import type { NumberTimeResolvedOptions } from 'src/numberfmt.d';
+import type { INumberTimeResolvedOptions } from 'src/numberfmt.d';
 
 export function getResolvedOptions(
-	userOptions?: Partial<NumberTimeResolvedOptions>
+	userOptions?: Partial<INumberTimeResolvedOptions>
 ) {
 	const { locale: userLocale } = userOptions || {};
 	const { locale, numberingSystem } = {

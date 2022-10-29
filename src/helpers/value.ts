@@ -18,7 +18,7 @@ export function getMetricValue(value: number): number {
 	return value;
 }
 
-export function getKiloValue(value: number): number {
+export function getKiloValue(value: number) {
 	const absValue = Math.abs(value);
 
 	if (absValue >= 0.001 && absValue <= 0.00999) return value * 1000;
@@ -26,7 +26,7 @@ export function getKiloValue(value: number): number {
 	return value;
 }
 
-export function getValue(value: number, format: string): number {
+export function getValue(value: number, format: string) {
 	if (rgDigitalSystem.test(format)) return getCompactPowersOfTwo(value);
 	if (rgMetricSystem.test(format)) return getMetricValue(value);
 	if (rgKiloSystem.test(format)) return getKiloValue(value);
