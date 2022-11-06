@@ -11,5 +11,6 @@ jobs:
           fetch-depth: "0"
       - uses: ruicsh/backup-action@main
         with:
-          target_repo_url: git@bitbucket.org:tuplo/numberfmt.git
-          ssh_private_key: ${{ secrets.BITBUCKET_SSH_PRIVATE_KEY }}
+          bitbucket_app_user: ${{ secrets.BACKUP_APP_USER }}
+          bitbucket_app_password: ${{ secrets.BACKUP_APP_PASSWORD }}
+          target_repo: tuplo/numberfmt
