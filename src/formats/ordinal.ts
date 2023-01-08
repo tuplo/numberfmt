@@ -1,14 +1,14 @@
-import { rgSpaceBetween } from '../helpers/regex';
+import { rgSpaceBetween } from "../helpers/regex";
 
 function getSuffixes(locale: string) {
 	switch (locale) {
-		case 'en-GB':
+		case "en-GB":
 		default:
 			return new Map([
-				['one', 'st'],
-				['two', 'nd'],
-				['few', 'rd'],
-				['other', 'th'],
+				["one", "st"],
+				["two", "nd"],
+				["few", "rd"],
+				["other", "th"],
 			]);
 	}
 }
@@ -23,7 +23,7 @@ interface IFormatOrdinalParams {
 export function formatOrdinal(params: IFormatOrdinalParams) {
 	const { value, formatted, locale, format } = params;
 	const pluralRules = new Intl.PluralRules(locale, {
-		type: 'ordinal',
+		type: "ordinal",
 	});
 
 	const rule = pluralRules.select(value);

@@ -1,6 +1,6 @@
-import { getDigitsFormat } from '../helpers/digits-format';
-import { getFractionDigits } from '../helpers/fraction-digits';
-import { rgUnitSystem } from '../helpers/regex';
+import { getDigitsFormat } from "../helpers/digits-format";
+import { getFractionDigits } from "../helpers/fraction-digits";
+import { rgUnitSystem } from "../helpers/regex";
 
 export function getMaximumFractionDigits(
 	value: number,

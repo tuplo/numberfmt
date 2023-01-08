@@ -1,4 +1,4 @@
-import { rgDigitalSystem, rgMetricSystem, rgKiloSystem } from './regex';
+import { rgDigitalSystem, rgMetricSystem, rgKiloSystem } from "./regex";
 
 export function getCompactPowersOfTwo(value: number): number {
 	let n = value;

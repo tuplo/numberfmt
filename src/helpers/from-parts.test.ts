@@ -1,25 +1,25 @@
-import { fromParts } from './from-parts';
+import { fromParts } from "./from-parts";
 
-describe('from parts', () => {
+describe("from parts", () => {
 	it.each([
 		[
-			'percentage',
+			"percentage",
 			[
-				{ type: 'integer', value: '100' },
-				{ type: 'percentSign', value: '%' },
+				{ type: "integer", value: "100" },
+				{ type: "percentSign", value: "%" },
 			],
-			{ integer: ['100'], percentSign: '%' },
+			{ integer: ["100"], percentSign: "%" },
 		],
 		[
-			'grouped integers',
+			"grouped integers",
 			[
-				{ type: 'integer', value: '2' },
-				{ type: 'group', value: ',' },
-				{ type: 'integer', value: '000' },
+				{ type: "integer", value: "2" },
+				{ type: "group", value: "," },
+				{ type: "integer", value: "000" },
 			],
-			{ integer: ['2', '000'], group: ',' },
+			{ integer: ["2", "000"], group: "," },
 		],
-	])('converts from parts to object: %s', (_, parts, expected) => {
+	])("converts from parts to object: %s", (_, parts, expected) => {
 		const result = fromParts(parts as Intl.NumberFormatPart[]);
 		expect(result).toStrictEqual(expected);
 	});

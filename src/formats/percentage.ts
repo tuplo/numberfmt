@@ -1,5 +1,5 @@
-import { rgSpaceBetween } from '../helpers/regex';
-import { fromParts } from '../helpers/from-parts';
+import { rgSpaceBetween } from "../helpers/regex";
+import { fromParts } from "../helpers/from-parts";
 
 interface IFormatPercentageParams {
 	format: string;
@@ -14,12 +14,12 @@ export function formatPercentage(params: IFormatPercentageParams) {
 
 	return [
 		minusSign,
-		(integer as string[]).join((group as string) || ''),
+		(integer as string[]).join((group as string) || ""),
 		decimal,
 		fraction,
-		rgSpaceBetween.test(format) && ' ',
+		rgSpaceBetween.test(format) && " ",
 		percentSign,
 	]
 		.filter(Boolean)
-		.join('');
+		.join("");
 }

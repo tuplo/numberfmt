@@ -1,16 +1,16 @@
-import 'zx/globals';
+import "zx/globals";
 
 async function main() {
 	await $`rm -rf dist`;
 	await $`tsc --build tsconfig.build.json`;
 
-	const modes = ['cjs', 'esm'];
+	const modes = ["cjs", "esm"];
 	for await (const mode of modes) {
 		const flags = [
-			'src/index.ts',
-			'--bundle',
+			"src/index.ts",
+			"--bundle",
 			`--format=${mode}`,
-			'--minify',
+			"--minify",
 			`--outfile=dist/index.${mode}.js`,
 		];
 		await $`esbuild ${flags}`;

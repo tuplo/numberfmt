@@ -1,6 +1,6 @@
-import { rgIntegerDigitsOnFormat } from './regex';
+import { rgIntegerDigitsOnFormat } from "./regex";
 
 export function getIntegerDigitsOnFormat(format: string) {
-	const [integersInFormat] = rgIntegerDigitsOnFormat.exec(format) || [''];
+	const [integersInFormat] = rgIntegerDigitsOnFormat.exec(format) || [""];
 	return integersInFormat.length;
 }

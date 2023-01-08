@@ -4,21 +4,21 @@ import {
 	rgByteSystem,
 	rgMetricSystem,
 	rgKiloSystem,
-} from '../helpers/regex';
+} from "../helpers/regex";
 
-type IBit = 'bit' | 'kilobit' | 'megabit' | 'gigabit' | 'terabit';
+type IBit = "bit" | "kilobit" | "megabit" | "gigabit" | "terabit";
 
 type IByte =
-	| 'byte'
-	| 'kilobyte'
-	| 'megabyte'
-	| 'gigabyte'
-	| 'terabyte'
-	| 'petabyte';
+	| "byte"
+	| "kilobyte"
+	| "megabyte"
+	| "gigabyte"
+	| "terabyte"
+	| "petabyte";
 
-type IMetric = 'millimeter' | 'centimeter' | 'meter' | 'kilometer';
+type IMetric = "millimeter" | "centimeter" | "meter" | "kilometer";
 
-type IKilo = 'gram' | 'kilogram';
+type IKilo = "gram" | "kilogram";
 
 type IUnit = IBit | IByte | IMetric | IKilo;
 
@@ -33,19 +33,19 @@ export function getUnitFromPowerOfTwo(
 export function getMetricUnit(value: number): IMetric {
 	const absValue = Math.abs(value);
 
-	if (absValue > 999.9999) return 'kilometer';
-	if (absValue >= 0.01 && absValue <= 0.0999) return 'centimeter';
-	if (absValue >= 0.001 && absValue <= 0.00999) return 'millimeter';
+	if (absValue > 999.9999) return "kilometer";
+	if (absValue >= 0.01 && absValue <= 0.0999) return "centimeter";
+	if (absValue >= 0.001 && absValue <= 0.00999) return "millimeter";
 
-	return 'meter';
+	return "meter";
 }
 
 export function getKiloUnit(value: number): IKilo {
 	const absValue = Math.abs(value);
 
-	if (absValue >= 0.001 && absValue <= 0.00999) return 'gram';
+	if (absValue >= 0.001 && absValue <= 0.00999) return "gram";
 
-	return 'kilogram';
+	return "kilogram";
 }
 
 export function getUnit(value: number, format: string): IUnit | undefined {
@@ -56,21 +56,21 @@ export function getUnit(value: number, format: string): IUnit | undefined {
 
 	if (rgBitSystem.test(format))
 		return getUnitFromPowerOfTwo(value, [
-			'bit',
-			'kilobit',
-			'megabit',
-			'gigabit',
-			'terabit',
+			"bit",
+			"kilobit",
+			"megabit",
+			"gigabit",
+			"terabit",
 		]);
 
 	if (rgByteSystem.test(format))
 		return getUnitFromPowerOfTwo(value, [
-			'byte',
-			'kilobyte',
-			'megabyte',
-			'gigabyte',
-			'terabyte',
-			'petabyte',
+			"byte",
+			"kilobyte",
+			"megabyte",
+			"gigabyte",
+			"terabyte",
+			"petabyte",
 		]);
 
 	return undefined;

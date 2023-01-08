@@ -1,30 +1,30 @@
-import { convertToNumber } from './helpers/convert-to-number';
-import { getCompactDisplay } from './options/compact-display';
-import { getCurrency } from './options/currency';
-import { getCurrencyDisplay } from './options/currency-display';
-import { getCurrencySign } from './options/currency-sign';
-import { getMaximumFractionDigits } from './options/maximum-fraction-digits';
-import { getMinimumFractionDigits } from './options/minimum-fraction-digits';
-import { getMinimumIntegerDigits } from './options/minimum-integer-digits';
-import { getNotation } from './options/notation';
-import { getSignDisplay } from './options/sign-display';
-import { getStyle } from './options/style';
-import { getUnit } from './options/unit';
-import { getUnitDisplay } from './options/unit-display';
+import { convertToNumber } from "./helpers/convert-to-number";
+import { getCompactDisplay } from "./options/compact-display";
+import { getCurrency } from "./options/currency";
+import { getCurrencyDisplay } from "./options/currency-display";
+import { getCurrencySign } from "./options/currency-sign";
+import { getMaximumFractionDigits } from "./options/maximum-fraction-digits";
+import { getMinimumFractionDigits } from "./options/minimum-fraction-digits";
+import { getMinimumIntegerDigits } from "./options/minimum-integer-digits";
+import { getNotation } from "./options/notation";
+import { getSignDisplay } from "./options/sign-display";
+import { getStyle } from "./options/style";
+import { getUnit } from "./options/unit";
+import { getUnitDisplay } from "./options/unit-display";
 
-import { formatOrdinal } from './formats/ordinal';
-import { formatPercentage } from './formats/percentage';
+import { formatOrdinal } from "./formats/ordinal";
+import { formatPercentage } from "./formats/percentage";
 
-import { getIntegerDigitsOnFormat } from './helpers/integer-digits-on-format';
-import { getDigitsFormat } from './helpers/digits-format';
+import { getIntegerDigitsOnFormat } from "./helpers/integer-digits-on-format";
+import { getDigitsFormat } from "./helpers/digits-format";
 import {
 	rgZerosOnTheLeft,
 	rgOrdinalFormat,
 	rgHasParentheses,
-} from './helpers/regex';
-import { getValue } from './helpers/value';
-import { getResolvedOptions } from './helpers/resolved-options';
-import type { INumberTimeResolvedOptions } from './numberfmt.d';
+} from "./helpers/regex";
+import { getValue } from "./helpers/value";
+import { getResolvedOptions } from "./helpers/resolved-options";
+import type { INumberTimeResolvedOptions } from "./numberfmt.d";
 
 function numberfmt(
 	userInput: unknown,
@@ -32,10 +32,10 @@ function numberfmt(
 	userOptions?: Partial<INumberTimeResolvedOptions>
 ) {
 	const userValue = convertToNumber(userInput);
-	if (userValue === null) return '';
+	if (userValue === null) return "";
 
 	// default format
-	const format = userFormat || '0,0';
+	const format = userFormat || "0,0";
 
 	const { locale, numberingSystem } = getResolvedOptions(userOptions);
 	const digitsFormat = getDigitsFormat(format);
@@ -55,7 +55,7 @@ function numberfmt(
 		numberingSystem,
 		signDisplay: getSignDisplay(format),
 		style: getStyle(format),
-		useGrouping: digitsFormat.includes(','),
+		useGrouping: digitsFormat.includes(","),
 		unit: getUnit(userValue, format),
 		unitDisplay: getUnitDisplay(format),
 	};
@@ -65,10 +65,10 @@ function numberfmt(
 
 	// remove zeros from '0.12'
 	if (getIntegerDigitsOnFormat(digitsFormat) === 0) {
-		n = n.replace(rgZerosOnTheLeft, '');
+		n = n.replace(rgZerosOnTheLeft, "");
 	}
 	// percentage with spaces before symbol
-	if (format.includes('%')) {
+	if (format.includes("%")) {
 		n = formatPercentage({ value, numberFormatter: nf, format });
 	}
 	// ordinals

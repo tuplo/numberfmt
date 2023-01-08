@@ -1,4 +1,4 @@
-import type { INumberTimeResolvedOptions } from 'src/numberfmt.d';
+import type { INumberTimeResolvedOptions } from "src/numberfmt.d";
 
 export function getResolvedOptions(
 	userOptions?: Partial<INumberTimeResolvedOptions>

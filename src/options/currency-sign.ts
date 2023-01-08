@@ -1,7 +1,7 @@
-import { rgHasParentheses } from '../helpers/regex';
+import { rgHasParentheses } from "../helpers/regex";
 
-type CurrencySign = 'standard' | 'accounting';
+type CurrencySign = "standard" | "accounting";
 
 export function getCurrencySign(format: string): CurrencySign {
-	return rgHasParentheses.test(format) ? 'accounting' : 'standard';
+	return rgHasParentheses.test(format) ? "accounting" : "standard";
 }
