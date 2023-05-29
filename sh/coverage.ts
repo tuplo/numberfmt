@@ -1,4 +1,4 @@
-import "zx/globals";
+import { $ } from "@tuplo/shell";
 
 async function main() {
 	await $`rm -rf ./node_modules/.cache`;

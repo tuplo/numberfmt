@@ -84,7 +84,9 @@ function numberfmt(
 }
 
 // Partial application for functional programming
-numberfmt.partial = (format: string) => (userValue: number) =>
-	numberfmt(userValue, format);
+numberfmt.partial =
+	(format: string, options?: Partial<INumberTimeResolvedOptions>) =>
+	(userValue: number) =>
+		numberfmt(userValue, format, options);
 
 export default numberfmt;
