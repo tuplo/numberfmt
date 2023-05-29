@@ -13,7 +13,7 @@
   <a href="https://codeclimate.com/github/tuplo/numberfmt/test_coverage">
     <img src="https://api.codeclimate.com/v1/badges/7978f92305e2d8ed67c6/test_coverage" />
   </a>
-  <img src="https://github.com/tuplo/numberfmt/workflows/Build/badge.svg">
+  <img src="https://github.com/tuplo/numberfmt/workflows/build/badge.svg">
 </p>
 
 </div>
