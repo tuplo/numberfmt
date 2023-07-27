@@ -17,4 +17,11 @@ describe("bug reports", () => {
 		const expected = "123.40";
 		expect(actual).toBe(expected);
 	});
+
+	it("respect number of fraction digits using short notation", () => {
+		const actual = nf(6_500, "0.0a");
+
+		const expected = "6.5K";
+		expect(actual).toBe(expected);
+	});
 });
