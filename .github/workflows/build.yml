@@ -62,7 +62,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: |
           npm install --frozen-lockfile --legacy-peer-deps --no-audit
-          npmm run build
+          npm run build
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@main
         with:
