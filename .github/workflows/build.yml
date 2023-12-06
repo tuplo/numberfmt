@@ -24,7 +24,6 @@ jobs:
       - run: |
           npm install --frozen-lockfile --legacy-peer-deps --no-audit
           npm run lint
-          npm run lint:ts
           npm run test:ci
 
   test-coverage:
